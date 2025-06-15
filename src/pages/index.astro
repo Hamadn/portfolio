@@ -65,34 +65,16 @@ const projects = (await getCollection("work"))
         </header>
 
         <div class="gallery">
-          <Grid variant="offset">
-            <a
-              href="https://hungryhub.surge.sh"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="/assets/hungryhub.png"
-                alt="HungryHub"
-                width="480"
-                height="620"
-              />
-            </a>
-			<a
-				href="https://manilabrosauto.com/"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<img
-					src="/assets/manilabrosauto.png"
-					alt="Manila Bros Auto"
-					width="480"
-					height="620"
-				/>
-			</a>
-			
-          </Grid>
-        </div>
+			<Grid variant="offset">
+				{
+					projects.map((project) => (
+						<li>
+							<PortfolioPreview project={project} />
+						</li>
+					))
+				}
+			</Grid>
+		</div>
 
         <div class="cta">
           <CallToAction href="/work/">
